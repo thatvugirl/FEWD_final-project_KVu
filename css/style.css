@@ -1,0 +1,564 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: black;
+	color: ivory;
+    font-family: 'Lobster Two', cursive;
+    font-size: 30px;
+}
+
+.splash {
+	padding: 0px;
+	background-image: url("../images/resonation.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	display: flex;
+	justifiy-content: center;
+	flex-direction: column;
+	align-items: center;
+    font-family: 'Lobster Two', cursive;
+    font-size: 48px;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+nav {
+    padding:10px 0;
+}
+
+#home nav {
+    width:100%;
+    /*background:rgba(130,198,63,.6);*/
+    color:white;
+    margin-top:50px;
+    padding-bottom:75px;
+}
+
+nav li {
+    display:inline-block;
+    margin:5px 5%;
+    width:40%;
+    box-sizing:border-box;  
+    border-radius:50%;
+    background-position:center center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-origin:border-box;
+    position:relative;
+    border:solid 4px rgba(0,0,0,.8);
+    transition:all ease-in-out .2s;
+}
+
+#home ul {
+    max-width:1000px;
+    margin:0 auto;
+}
+
+#home nav li {
+    width:21%;
+    margin:2%;
+    box-shadow:0 0 15px black;
+    border-color:transparent;
+    color:white;
+}
+
+nav li:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+}
+
+nav li div {
+    position:absolute;
+    width:100%;
+    height:35px;
+    text-align:center;
+    margin:auto;
+    margin-top:calc(50% - 17.5px);
+    font-family:"Lobster Two", cursive;
+    font-size:30px;
+    text-shadow:2px 2px 2px black;
+}
+
+#reso-hp-serenity {
+    border-radius: 15px 50px;
+    padding: 20px; 
+    width: 200px;
+    height: 150px; 
+}
+
+#reso-hp-reflect {
+    border-radius: 15px 50px;
+    padding: 20px; 
+    width: 200px;
+    height: 150px; 
+}
+
+#reso-hp-energy {
+    border-radius: 15px 50px;
+    padding: 20px; 
+    width: 200px;
+    height: 150px; 
+}
+
+#reso-hp-contemplate {
+    border-radius: 15px 50px;
+    padding: 20px; 
+    width: 200px;
+    height: 150px; 
+}
+
+#reso-hp-yoga {
+    border-radius: 15px 50px;
+    padding: 20px; 
+    width: 200px;
+    height: 150px; 
+}
+
+#reso-hp-meditate {
+    border-radius: 15px 50px;
+    padding: 20px; 
+    width: 200px;
+    height: 150px; 
+}
+
+#home nav li div {
+    font-size:50px;
+    height:50px; /* matches font size */
+    margin-top:calc(50% - 25px); /* half of height */
+}
+
+nav li.serenity {
+    background-image:url(../images/1.jpg);
+}
+
+nav li.reflect {
+    background-image:url(../images/4.jpg);
+}
+
+nav li.energy {
+    background-image:url(../images/7.jpg);
+}
+
+nav li.contemplate {
+    background-image:url(../images/10.jpg);
+}
+
+nav li.yoga {
+    background-image:url(../images/13.jpg);
+}
+
+nav li.meditate {
+    background-image:url(../images/16.jpg);
+}
+
+/*hover sensor*/
+
+#home nav li:hover {
+    border-color:lightblue;
+    box-shadow:0 0 30px black;  
+    transform:scale(1.1,1.1);
+}
+
+/*medias?*/
+@media (max-width:600px){
+    #home nav {
+        margin-top:5px;
+    }
+    
+    #home nav ul {
+        margin:0 20px;
+    }
+    
+    #home nav li {
+        width:44%;
+        margin:3%;
+    }
+}
+
+
+/* FOOTER */
+
+footer {
+    bottom:0;
+    position:absolute;
+    border-top:solid 2px #666;
+    box-sizing:border-box;
+    padding: 10px;
+    margin: 0 5%;
+    width: 90%;
+}
+
+#home footer {
+    border:none;
+    background:rgba(0,0,0,.75);
+    margin:0;
+    width:100%;
+    padding:0px 20px;
+    align-content: center;
+}
+
+#home footer,
+#home footer a,
+#home footer a:visited {
+    color:white;
+}
+
+#home footer a:hover {
+    color:#82c63f;
+}
+
+/*Form submission area*/
+
+form {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  width:100%;
+  
+}
+
+form div {
+  padding:10px 10px;
+}
+
+input {
+
+  padding:5px;
+  background:lightblue;
+}
+
+input::placeholder {
+  color:gray;
+}
+
+}
+input[type=checkbox]{
+  display:none;
+}
+
+input[type=checkbox] + label::before{
+  color:white;
+  content:"";
+  font-size:20px;
+  text-align:center;
+  width:25px;
+  height:25px;
+  background:lightgray;
+  display:inline-block;
+}
+
+input[type=checkbox]:checked + label::before{
+  background:lightblue;
+  content:"\2766";
+}
+
+input[type=checkbox] + label, .checkbox-container{
+  display:flex;
+}
+
+/**********************************************************************/
+
+.cb-slideshow,
+.cb-slideshow:after { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0; 
+}
+.cb-slideshow:after { 
+    content: '';
+    /*background: transparent url(../images/1.jpg) repeat top left; */
+    /*This may have been my source's way of making the slideshow look window-screened with a png*/
+}
+.cb-slideshow li span { 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: none;
+    opacity: 0;
+    z-index: 0;
+	-webkit-backface-visibility: hidden;
+    -webkit-animation: imageAnimation 24s ease-in-out 0s;
+    -moz-animation: imageAnimation 24s ease-in-out 0s;
+    -o-animation: imageAnimation 24s ease-in-out 0s;
+    -ms-animation: imageAnimation 24s ease-in-out 0s;
+    animation: imageAnimation 24s ease-in-out 0s; 
+}
+.cb-slideshow li div { 
+    z-index: 1000;
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    color: #fff;
+    -webkit-animation: titleAnimation 24s ease-in-out 0s;
+    -moz-animation: titleAnimation 24s ease-in-out 0s;
+    -o-animation: titleAnimation 24s ease-in-out 0s;
+    -ms-animation: titleAnimation 24s ease-in-out 0s;
+    animation: titleAnimation 24s ease-in-out 0s; 
+}
+.cb-slideshow li div h3 { 
+    display: flex;
+    justifiy-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Lobster Two', cursive;
+    font-size: 230px;
+    line-height: 200px; 
+}
+
+/*serenity version of slideshow*/
+
+.cb-slideshow li:nth-child(1) span { 
+    background-image: url(../images/1.jpg) 
+}
+.cb-slideshow li:nth-child(2) span { 
+    background-image: url(../images/2.jpg);
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    -o-animation-delay: 6s;
+    -ms-animation-delay: 6s;
+    animation-delay: 6s; 
+}
+.cb-slideshow li:nth-child(3) span { 
+    background-image: url(../images/3.jpg);
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    -ms-animation-delay: 12s;
+    animation-delay: 12s; 
+}
+.cb-slideshow li:nth-child(4) span { 
+    background-color: black;
+    -webkit-animation-delay: 18s;
+    -moz-animation-delay: 18s;
+    -o-animation-delay: 18s;
+    -ms-animation-delay: 18s;
+    animation-delay: 18s; 
+}
+
+.cb-slideshow li:nth-child(4) div { 
+    -webkit-animation-delay: 18s;
+    -moz-animation-delay: 18s;
+    -o-animation-delay: 18s;
+    -ms-animation-delay: 18s;
+    animation-delay: 18s; 
+}
+
+/*reflect version of slideshow*/
+
+#cb-reflect li:nth-child(1) span { 
+    background-image: url(../images/4.jpg) 
+}
+#cb-reflect li:nth-child(2) span { 
+    background-image: url(../images/5.jpg);
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    -o-animation-delay: 6s;
+    -ms-animation-delay: 6s;
+    animation-delay: 6s; 
+}
+#cb-reflect li:nth-child(3) span { 
+    background-image: url(../images/6.jpg);
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    -ms-animation-delay: 12s;
+    animation-delay: 12s; 
+}
+
+/*energy version of slideshow*/
+
+#cb-energy li:nth-child(1) span { 
+    background-image: url(../images/7.jpg) 
+}
+#cb-energy li:nth-child(2) span { 
+    background-image: url(../images/8.jpg);
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    -o-animation-delay: 6s;
+    -ms-animation-delay: 6s;
+    animation-delay: 6s; 
+}
+#cb-energy li:nth-child(3) span { 
+    background-image: url(../images/9.jpg);
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    -ms-animation-delay: 12s;
+    animation-delay: 12s; 
+}
+
+/*contemplate version of slideshow*/
+
+#cb-contemplate li:nth-child(1) span { 
+    background-image: url(../images/10.jpg) 
+}
+#cb-contemplate li:nth-child(2) span { 
+    background-image: url(../images/11.jpg);
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    -o-animation-delay: 6s;
+    -ms-animation-delay: 6s;
+    animation-delay: 6s; 
+}
+#cb-contemplate li:nth-child(3) span { 
+    background-image: url(../images/12.jpg);
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    -ms-animation-delay: 12s;
+    animation-delay: 12s; 
+}
+
+/*yoga version of slideshow*/
+
+#cb-yoga li:nth-child(1) span { 
+    background-image: url(../images/13.jpg) 
+}
+#cb-yoga li:nth-child(2) span { 
+    background-image: url(../images/14.jpg);
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    -o-animation-delay: 6s;
+    -ms-animation-delay: 6s;
+    animation-delay: 6s; 
+}
+#cb-yoga li:nth-child(3) span { 
+    background-image: url(../images/15.jpg);
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    -ms-animation-delay: 12s;
+    animation-delay: 12s; 
+}
+
+/*meditate version of slideshow*/
+
+#cb-meditate li:nth-child(1) span { 
+    background-image: url(../images/16.jpg) 
+}
+#cb-meditate li:nth-child(2) span { 
+    background-image: url(../images/17.jpg);
+    -webkit-animation-delay: 6s;
+    -moz-animation-delay: 6s;
+    -o-animation-delay: 6s;
+    -ms-animation-delay: 6s;
+    animation-delay: 6s; 
+}
+#cb-meditate li:nth-child(3) span { 
+    background-image: url(../images/18.jpg);
+    -webkit-animation-delay: 12s;
+    -moz-animation-delay: 12s;
+    -o-animation-delay: 12s;
+    -ms-animation-delay: 12s;
+    animation-delay: 12s; 
+}
+
+
+}
+/* Animation for the slideshow images */
+@-webkit-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -webkit-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -webkit-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-moz-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -moz-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -moz-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-o-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -o-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -o-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-ms-keyframes imageAnimation { 
+    0% { opacity: 0;
+    -ms-animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         -ms-animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@keyframes imageAnimation { 
+    0% { opacity: 0;
+    animation-timing-function: ease-in; }
+    8% { opacity: 1;
+         animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+/* Animation for the title */
+@-webkit-keyframes titleAnimation { 
+    0% { opacity: 0 }
+    8% { opacity: 1 }
+    17% { opacity: 1 }
+    19% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-moz-keyframes titleAnimation { 
+    0% { opacity: 0 }
+    8% { opacity: 1 }
+    17% { opacity: 1 }
+    19% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-o-keyframes titleAnimation { 
+    0% { opacity: 0 }
+    8% { opacity: 1 }
+    17% { opacity: 1 }
+    19% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@-ms-keyframes titleAnimation { 
+    0% { opacity: 0 }
+    8% { opacity: 1 }
+    17% { opacity: 1 }
+    19% { opacity: 0 }
+    100% { opacity: 0 }
+}
+@keyframes titleAnimation { 
+    0% { opacity: 0 }
+    8% { opacity: 1 }
+    17% { opacity: 1 }
+    19% { opacity: 0 }
+    100% { opacity: 0 }
+}
+/* Show at least something when animations not supported */
+.no-cssanimations .cb-slideshow li span{
+	opacity: 1;
+}
+@media screen and (max-width: 1140px) { 
+    .cb-slideshow li div h3 { font-size: 140px }
+}
+@media screen and (max-width: 600px) { 
+    .cb-slideshow li div h3 { font-size: 80px }
+}
